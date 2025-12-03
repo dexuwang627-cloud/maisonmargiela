@@ -10,7 +10,7 @@ export const PRODUCTS = [
     { id: 12, name: 'Replica Springtime In A Park Eau De Toilette', image1: '/images/springtime1.jpg', image2: '/images/springtime2.jpg' },
     { id: 13, name: 'Replica Beach Walk Eau De Toilette', image1: '/images/beachwalk1.jpg', image2: '/images/beachwalk2.jpg' },
     { id: 14, name: 'Replica Matcha Meditation Eau De Toilette', image1: '/images/meditation1.jpg', image2: '/images/meditation2.jpg' },
-    { id: 15, name: 'Replica After Dark Eau De Toilette', image1: '/images/afterdark1.jpg', image2: '/images/afterdark2.jpg' },
-    { id: 16, name: 'Replica Daydream Eau De Toilette', image1: '/images/daydream1.jpg', image2: '/images/daydream2.jpg' },
-    { id: 17, name: 'Replica Static Eau De Toilette', image1: '/images/static1.jpg', image2: '/images/static2.jpg' },
+    { id: 15, name: 'Replica After Dark', image1: '/images/afterdark1.jpg', image2: '/images/afterdark2.jpg' },
+    { id: 16, name: 'Replica Daydream', image1: '/images/daydream1.jpg', image2: '/images/daydream2.jpg' },
+    { id: 17, name: 'Replica Static', image1: '/images/static1.jpg', image2: '/images/static2.jpg' },
 ];

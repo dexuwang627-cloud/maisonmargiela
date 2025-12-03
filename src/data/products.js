@@ -1,0 +1,16 @@
+export const PRODUCTS = [
+    { id: 1, name: 'Replica Afternoon Delight Eau De Toilette', image1: '/images/delight1.jpg', image2: '/images/delight2.jpg' },
+    { id: 2, name: 'Replica Lazy Sunday Morning Eau De Toilette', image1: '/images/lazysundaymorning1.jpg', image2: '/images/lazysundaymorning2.jpg' },
+    { id: 3, name: 'Replica When The Rain Stops Eau De Toilette', image1: '/images/rainstops1.jpg', image2: '/images/rainstops2.jpg' },
+    { id: 5, name: 'Replica Sailing Day Eau De Toilette', image1: '/images/sailingday1.jpg', image2: '/images/sailingday2.jpg' },
+    { id: 6, name: 'Replica Under The Lemon Trees Eau De Toilette', image1: '/images/lemontrees1.jpg', image2: '/images/lemontrees2.jpg' },
+    { id: 7, name: 'Replica Autumn Vibes Eau De Toilette', image1: '/images/autumn1.jpg', image2: '/images/autumn2.jpg' },
+    { id: 8, name: 'Replica By The Fireplace Eau De Toilette', image1: '/images/fireplace1.jpg', image2: '/images/fireplace2.jpg' },
+    { id: 10, name: 'Replica Coffee Break Eau De Toilette', image1: '/images/coffee1.jpg', image2: '/images/coffee2.jpg' },
+    { id: 12, name: 'Replica Springtime In A Park Eau De Toilette', image1: '/images/springtime1.jpg', image2: '/images/springtime2.jpg' },
+    { id: 13, name: 'Replica Beach Walk Eau De Toilette', image1: '/images/beachwalk1.jpg', image2: '/images/beachwalk2.jpg' },
+    { id: 14, name: 'Replica Matcha Meditation Eau De Toilette', image1: '/images/meditation1.jpg', image2: '/images/meditation2.jpg' },
+    { id: 15, name: 'Replica After Dark Eau De Toilette', image1: '/images/afterdark1.jpg', image2: '/images/afterdark2.jpg' },
+    { id: 16, name: 'Replica Daydream Eau De Toilette', image1: '/images/daydream1.jpg', image2: '/images/daydream2.jpg' },
+    { id: 17, name: 'Replica Static Eau De Toilette', image1: '/images/static1.jpg', image2: '/images/static2.jpg' },
+];

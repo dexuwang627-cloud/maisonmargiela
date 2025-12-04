@@ -9,9 +9,11 @@ const ProductCard = ({ product }) => {
 
     const hasImages = product.image1 && product.image2;
 
+    const isStaticProduct = product.name.includes('Static');
+
     return (
         <div
-            className="product-card"
+            className={`product-card ${isStaticProduct ? 'static-product' : ''}`}
             onClick={() => navigate(`/product/${product.id}`)}
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
@@ -28,7 +30,7 @@ const ProductCard = ({ product }) => {
                 )}
             </div>
             <div className="product-info">
-                <h3 className="product-name">{product.name}</h3>
+                <h3 className="product-name" data-text={product.name}>{product.name}</h3>
                 <button className="bookmark-btn" onClick={(e) => e.stopPropagation()}>
                     <Bookmark size={16} />
                 </button>

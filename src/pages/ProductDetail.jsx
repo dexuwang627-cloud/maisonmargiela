@@ -4,8 +4,8 @@ import { Plus, Minus, Bookmark, Copy } from 'lucide-react';
 import { PRODUCTS } from '../data/products';
 import './ProductDetail.css';
 
-const AccordionItem = ({ title, children, icon }) => {
-    const [isOpen, setIsOpen] = useState(false);
+const AccordionItem = ({ title, children, icon, isOpenDefault = false }) => {
+    const [isOpen, setIsOpen] = useState(isOpenDefault);
 
     return (
         <div className={`accordion-item ${isOpen ? 'open' : ''}`}>
@@ -91,11 +91,15 @@ const ProductDetail = () => {
 
                     <button className="notify-me-btn">Notify me</button>
 
-                    <p className="product-description">
-                        "{product.name} evokes the soft sensation of freshly washed linen sheets on ... <span className="more-link">More</span>
-                    </p>
-
                     <div className="product-accordions">
+                        <AccordionItem title="Description" isOpenDefault={true}>
+                            <div className="detail-content">
+                                <p className="product-description">
+                                    {product.description || "The Replica collection assembles iconoclast fragrances that have the universal power to trigger personally cherished moments. True to its ‘creative collective’ approach, Maison Margiela collaborates with the best perfumers, chosen for their genuine connection with the memory, stimulated by the artistic performance of composing a fragrance as a universal invitation to awaken, celebrate and share unforgettable feelings and emotions."}
+                                </p>
+                            </div>
+                        </AccordionItem>
+
                         <AccordionItem title="Product Details">
                             <div className="detail-content">
                                 <div className="item-code">

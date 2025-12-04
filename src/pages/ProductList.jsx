@@ -29,7 +29,12 @@ const ProductList = () => {
             </div>
 
             <div className="load-more-container">
-                <button className="back-to-top">Go back to top</button>
+                <button
+                    className="back-to-top"
+                    onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                >
+                    Go back to top
+                </button>
             </div>
 
             <RefineSidebar

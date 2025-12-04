@@ -1,14 +1,17 @@
 .product-detail-page {
-    padding-top: 2rem;
-    max-width: 1400px;
+    padding-top: 0;
+    max-width: 100%;
     margin: 0 auto;
 }
 
 .product-detail-container {
     display: flex;
-    gap: 4rem;
+    gap: 2rem;
     margin-bottom: 6rem;
-    padding: 0 2rem;
+    padding: 0 4rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding-top: 2rem;
 }
 
 /* Thumbnails */
@@ -16,7 +19,8 @@
     display: flex;
     flex-direction: column;
     gap: 1rem;
-    width: 80px;
+    width: 100px;
+    padding-top: 4rem;
 }
 
 .thumbnail {
@@ -37,19 +41,20 @@
 }
 
 /* Main Image */
-/* Main Image */
 .product-main-image {
-    flex: 1;
-    max-width: 500px;
+    flex: 2;
     display: flex;
     justify-content: center;
     align-items: flex-start;
+    background-color: transparent;
+    padding: 0;
 }
 
 .main-image {
-    width: 100%;
+    width: 60%;
     height: auto;
     object-fit: contain;
+    mix-blend-mode: multiply;
 }
 
 .main-image-placeholder {
@@ -66,32 +71,44 @@
 
 /* Info Section */
 .product-info-section {
-    flex: 1;
-    max-width: 400px;
+    flex: 1.2;
+    padding-top: 4rem;
+    padding-left: 2rem;
 }
 
 .product-category {
     font-size: 0.7rem;
-    font-weight: 600;
+    font-weight: 700;
     letter-spacing: 1px;
     display: block;
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
     text-transform: uppercase;
+    font-family: var(--font-main);
 }
 
 .product-header h1 {
-    font-size: 1.8rem;
+    font-size: 2.2rem;
     font-weight: 400;
-    font-family: 'Times New Roman', serif;
-    margin-bottom: 1rem;
+    font-family: var(--font-main);
+    /* Changed to sans-serif per screenshot observation or keep serif if title looks serif */
+    /* Screenshot shows serif for "Replica at the Barber's..." */
+    font-family: var(--font-main);
+    /* Actually the screenshot looks like sans-serif for the product name "Replica..."? No, wait. */
+    /* Let's look closely at the screenshot. "Replica at the Barber's..." looks like a clean sans-serif or a very subtle serif. */
+    /* The user request said "Logo (Serif)" and "UI (Sans-Serif)". Product title usually falls under UI/Content. */
+    /* However, in the screenshot "Replica at the Barber's..." looks like the same font as "Maison Margiela" logo? No. */
+    /* Let's stick to the user's previous instruction: "Product Name" -> Sans-Serif. */
+    font-family: var(--font-main);
+    margin-bottom: 1.5rem;
     line-height: 1.2;
+    max-width: 80%;
 }
 
 .bookmark-btn-large {
     background: none;
     border: none;
     cursor: pointer;
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
     display: block;
 }
 
@@ -100,19 +117,22 @@
     background-color: #000;
     color: #fff;
     border: none;
-    padding: 1rem;
+    padding: 1.2rem;
     text-transform: uppercase;
     font-size: 0.8rem;
     font-weight: 600;
     cursor: pointer;
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
+    letter-spacing: 1px;
 }
 
 .product-description {
-    font-size: 0.9rem;
+    font-size: 1rem;
     line-height: 1.6;
     margin-bottom: 3rem;
-    font-family: 'Times New Roman', serif;
+    font-family: var(--font-serif);
+    /* Description often serif for elegance */
+    color: #333;
 }
 
 .more-link {
@@ -120,6 +140,7 @@
     cursor: pointer;
     font-size: 0.8rem;
     font-family: var(--font-main);
+    text-decoration: underline;
 }
 
 /* Accordion */

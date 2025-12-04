@@ -1,8 +1,28 @@
 :root {
   --font-main: 'Inter', sans-serif;
+  --font-serif: 'Goudy Old Style', 'Baskerville', 'Times New Roman', serif;
   --color-text: #000;
   --color-bg: #fff;
   --color-gray: #f5f5f5;
+}
+
+.logo,
+.page-title,
+h1 {
+  font-family: var(--font-serif);
+  font-weight: 400;
+}
+
+.button,
+.product-name,
+button,
+.text-btn,
+.refine-btn,
+.breadcrumbs,
+.subtitle {
+  font-family: var(--font-main);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 * {
@@ -26,4 +46,206 @@ a {
 
 ul {
   list-style: none;
+}
+
+/* Glitch Effect for Static Product */
+@keyframes glitch-anim-1 {
+  0% {
+    clip-path: inset(20% 0 78% 0);
+    transform: translate(-1px, 0);
+  }
+
+  20% {
+    clip-path: inset(60% 0 38% 0);
+    transform: translate(1px, 0);
+  }
+
+  40% {
+    clip-path: inset(40% 0 58% 0);
+    transform: translate(-1px, 0);
+  }
+
+  60% {
+    clip-path: inset(80% 0 18% 0);
+    transform: translate(1px, 0);
+  }
+
+  80% {
+    clip-path: inset(10% 0 88% 0);
+    transform: translate(-1px, 0);
+  }
+
+  100% {
+    clip-path: inset(30% 0 68% 0);
+    transform: translate(1px, 0);
+  }
+}
+
+@keyframes glitch-anim-2 {
+  0% {
+    clip-path: inset(10% 0 88% 0);
+    transform: translate(1px, 0);
+  }
+
+  20% {
+    clip-path: inset(80% 0 18% 0);
+    transform: translate(-1px, 0);
+  }
+
+  40% {
+    clip-path: inset(30% 0 68% 0);
+    transform: translate(1px, 0);
+  }
+
+  60% {
+    clip-path: inset(15% 0 83% 0);
+    transform: translate(-1px, 0);
+  }
+
+  80% {
+    clip-path: inset(55% 0 43% 0);
+    transform: translate(1px, 0);
+  }
+
+  100% {
+    clip-path: inset(40% 0 58% 0);
+    transform: translate(-1px, 0);
+  }
+}
+
+/* Slightly more intense for images */
+@keyframes glitch-anim-image-1 {
+  0% {
+    clip-path: inset(20% 0 78% 0);
+    transform: translate(-2px, 0);
+  }
+
+  20% {
+    clip-path: inset(60% 0 38% 0);
+    transform: translate(2px, 0);
+  }
+
+  40% {
+    clip-path: inset(40% 0 58% 0);
+    transform: translate(-2px, 0);
+  }
+
+  60% {
+    clip-path: inset(80% 0 18% 0);
+    transform: translate(2px, 0);
+  }
+
+  80% {
+    clip-path: inset(10% 0 88% 0);
+    transform: translate(-2px, 0);
+  }
+
+  100% {
+    clip-path: inset(30% 0 68% 0);
+    transform: translate(2px, 0);
+  }
+}
+
+@keyframes glitch-anim-image-2 {
+  0% {
+    clip-path: inset(10% 0 88% 0);
+    transform: translate(2px, 0);
+  }
+
+  20% {
+    clip-path: inset(80% 0 18% 0);
+    transform: translate(-2px, 0);
+  }
+
+  40% {
+    clip-path: inset(30% 0 68% 0);
+    transform: translate(2px, 0);
+  }
+
+  60% {
+    clip-path: inset(15% 0 83% 0);
+    transform: translate(-2px, 0);
+  }
+
+  80% {
+    clip-path: inset(55% 0 43% 0);
+    transform: translate(2px, 0);
+  }
+
+  100% {
+    clip-path: inset(40% 0 58% 0);
+    transform: translate(-2px, 0);
+  }
+}
+
+.glitch-container {
+  position: relative;
+  display: inline-block;
+}
+
+.static-product:hover .product-image,
+.static-product:hover .product-name {
+  /* Removed main element animation to preserve readability */
+  position: relative;
+}
+
+.static-product:hover .product-image::before,
+.static-product:hover .product-image::after,
+.static-product:hover .product-name::before,
+.static-product:hover .product-name::after {
+  content: attr(data-text);
+  /* For text */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: inherit;
+  /* For images this might need adjustment, but for text it works */
+  opacity: 0.5;
+  /* Reduced opacity for subtle effect */
+}
+
+/* Specific handling for Image Glitch */
+.static-product:hover .product-image::before {
+  content: "";
+  background: inherit;
+  left: -2px;
+  text-shadow: 2px 0 #ff00c1;
+  clip-path: inset(0 0 0 0);
+  animation: glitch-anim-image-2 3s infinite linear alternate-reverse;
+  mix-blend-mode: hard-light;
+}
+
+.static-product:hover .product-image::after {
+  content: "";
+  background: inherit;
+  left: 2px;
+  text-shadow: -2px 0 #00fff9;
+  clip-path: inset(0 0 0 0);
+  animation: glitch-anim-image-1 2.5s infinite linear alternate-reverse;
+  mix-blend-mode: hard-light;
+}
+
+/* Specific handling for Text Glitch */
+.static-product:hover .product-name {
+  color: #000;
+}
+
+.static-product:hover .product-name::before {
+  content: attr(data-text);
+  left: -1px;
+  text-shadow: 0.5px 0 #ff00c1;
+  background: transparent;
+  clip-path: inset(0 0 0 0);
+  animation: glitch-anim-2 2.5s infinite linear alternate-reverse;
+}
+
+.static-product:hover .product-name::after {
+  content: attr(data-text);
+  left: 1px;
+  text-shadow: -0.5px 0 #00fff9;
+  background: transparent;
+  clip-path: inset(0 0 0 0);
+  animation: glitch-anim-1 2s infinite linear alternate-reverse;
 }
